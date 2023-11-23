@@ -42,9 +42,7 @@ if (isset($_SESSION['login'])) {
                             <div class="alert alert-<?= $_SESSION['color']?>" role="alert">
                             <?= $_SESSION['message']?>
                             </div>
-                            <?php unset($_SESSION['message']);} ?>
-                            
-
+                        <?php unset($_SESSION['message']);} ?>
                         
                         <!-- **********************  (1)  ********************** -->
                         

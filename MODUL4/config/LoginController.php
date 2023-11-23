@@ -34,11 +34,11 @@ function login($input) {
             $_SESSION["login"] = true;
             
             // d. Set variabel session dengan key id untuk menyimpan id user
-            $_SESSION['email'] = $data['email'];
+            $_SESSION['id'] = $data['id'];
             //
             // e. Buat kondisi untuk mengecek apakah checkbox "remember me" terisi kemudian set cookie dan isi dengan id
            if (isset($input['remember'])) {
-            setcookie('email', $data['email'], time() + 3600);
+            setcookie('id', $data['id'], time() + 3600);
            }
             // 
         } else {
@@ -53,8 +53,8 @@ function login($input) {
     // (5) Buat kondisi else, kemudian di dalamnya
         } else {
     //     Buat variabel session dengan key message untuk menampilkan pesan error ketika email tidak ditemukan
-    $_SESSION['message'] = 'email tidak ditemukan';
-    $_SESSION['color'] = 'danger';
+        $_SESSION['message'] = 'email tidak ditemukan';
+        $_SESSION['color'] = 'danger';
 
     // 
 }
@@ -68,7 +68,7 @@ function rememberMe($cookie)
     // 
 
     // (7) Ambil nilai cookie yang ada
-    $id = $cookie ['email'];
+    $id = $cookie ['id'];
     // 
 
     // (8) Buat dan lakukan query untuk mencari data dengan id yang sama

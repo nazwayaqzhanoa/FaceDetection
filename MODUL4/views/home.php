@@ -10,8 +10,9 @@ if (!isset($_SESSION['login'])) {
 
 // (1) Buat variabel untuk menampung id user berdasarkan session dengan key id
 //     Kemudian lakukan query untuk mencari id user menggunakan variabel yang sudah dibuat
-$userid = $_SESSION['id'];
-$query = " SELECT * FROM users WHERE id ='$userid'";
+$id = $_SESSION['id'];
+$query = " SELECT * FROM users WHERE id ='$id'";
+$result = mysqli_query($db, $query);
 // 
 
 // (2) Buatlah perkondisian ketika id ditemukan ( gunakan mysqli_num_rows == 1 )
